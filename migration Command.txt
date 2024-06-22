@@ -1,0 +1,3 @@
+in dir: Movies\Movies.DataAccess
+
+dotnet ef migrations add initialModel --project .\Movies.DataAccess.csproj  --output-dir ./Persistence/Migrations --startup-project ..\Movies\Movies.csproj

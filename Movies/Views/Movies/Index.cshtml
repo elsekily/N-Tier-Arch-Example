@@ -1,0 +1,106 @@
+﻿@model Movies.Application.Resources.QueryResultResource<Movies.Application.Resources.MovieResource>;
+@{
+    ViewData["Title"] = "Movies List";
+}
+
+<h1>Movies</h1>
+
+
+<div class="card mb-2">
+
+    <div class="card-body">
+        <div class="container ">
+            <div class="row">
+                <div class="col-lg-10">
+                    <input class="form-control rounded-pill" placeholder="Enter Movie Name" />
+                </div>
+                <div class="col-lg-2">
+                    <button class="btn btn-light float-end rounded-pill">Search</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="card">
+    <div class="card-body">
+        <table class="table table-striped table-bordered mb-2 text-center">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Release Date</th>
+                    <th>Genre</th>
+                    <th>MPAA</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var movie in Model.CollectionResult)
+                {
+                    <tr>
+                        <td>@movie.Name</td>
+                        <td>@movie.ReleaseDate.ToString("yyyy-MM-dd")</td>
+                        <td>@movie.Genre</td>
+                        <td>@movie.MpaaRating.ToString()</td>
+                        <td>@movie.Rating</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="text-center d-flex align-items-center justify-content-center">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item @(Model.Page == 1? "disabled" : "")">
+                        <a class="page-link"
+                           href="@Url.Action("Index","Movies", new { Page = Model.Page - 1})">Previous</a>
+                    </li>
+
+                    @{
+                        var paginationCount = 10;
+
+                        int minNumber;
+                        int maxNumber;
+                        if (Model.TotalPages < paginationCount)
+                        {
+                            minNumber = 1;
+                            maxNumber = Model.TotalPages;
+                        }
+                        else
+                        {
+                            var precedingCount = 4;
+                            var followingCount = 5;
+                            minNumber = Model.Page - precedingCount > 0 ? Model.Page - precedingCount : 1;
+                            maxNumber = Model.Page + followingCount > Model.TotalPages ? Model.TotalPages : Model.Page + followingCount;
+
+
+                            var precedingRemaining = precedingCount - (Model.Page - minNumber);
+                            var followingRemaining = followingCount - (maxNumber - Model.Page);
+
+                            maxNumber = precedingRemaining > 0 ? maxNumber + precedingRemaining : maxNumber;
+                            minNumber = followingRemaining > 0 ? minNumber - followingRemaining : minNumber;
+
+                        }
+                    }
+                    @for (int i = minNumber; i <= maxNumber; i++)
+                    {
+                        <li class="page-item @(i==Model.Page? "active disabled" : "")">
+                            <a class="page-link"
+                               href="@Url.Action("Index","Movies", new { Page = i})">@i</a>
+                        </li>
+
+                    }
+                    <li class="page-item @(Model.Page == Model.TotalPages ? "disabled" : "")">
+                        <a class="page-link"
+                           href="@Url.Action("Index","Movies", new { Page = Model.Page + 1})">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+</div>
+
+
+
