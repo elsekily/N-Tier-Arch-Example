@@ -1,7 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using Movies.DataAccess.Identity;
 using Movies.DataAccess.Persistence;
 using Movies.DataAccess.Repositories.Core;
 using Movies.DataAccess.Repositories.Implementation;
@@ -32,6 +34,9 @@ public static class DataAccessDependencyInjection
         services.AddDbContext<MoviesDbContext>(options =>
                             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
                                        opt => opt.MigrationsAssembly(typeof(MoviesDbContext).Assembly.FullName)));
+
+        services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<MoviesDbContext>();
     }
 
 }
