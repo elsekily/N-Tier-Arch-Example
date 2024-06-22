@@ -4,6 +4,7 @@ using Movies.DataAccess.Extensions;
 using Movies.DataAccess.Persistence;
 using Movies.DataAccess.Repositories.Core;
 using Movies.DataAccess.Specification;
+using System.IO;
 
 namespace Movies.DataAccess.Repositories.Implementation;
 
@@ -35,10 +36,5 @@ public class MoviesRepository : BaseRepository<Movie> , IMoviesRepository
             CollectionResult = collection,
             TotalQueryCount = count,
         };
-    }
-
-    public async Task<int> GetMoviesCountAsync()
-    {
-       return await dbContext.Movies.CountAsync();
     }
 }

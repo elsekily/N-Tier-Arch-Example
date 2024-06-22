@@ -62,7 +62,7 @@
 
                         int minNumber;
                         int maxNumber;
-                        if (Model.TotalPages < paginationCount)
+                        if (Model.TotalPages < paginationCount || Model.Page > Model.TotalPages)
                         {
                             minNumber = 1;
                             maxNumber = Model.TotalPages;

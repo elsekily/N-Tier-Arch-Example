@@ -3,14 +3,14 @@ using Microsoft.EntityFrameworkCore;
 using Movies.Core.Entities;
 
 namespace Movies.DataAccess.Persistence.Configurations;
-internal class MovieConfiguration : IEntityTypeConfiguration<Movie>
+
+internal class DirectorConfiguration : IEntityTypeConfiguration<Director>
 {
-    public void Configure(EntityTypeBuilder<Movie> builder)
+    public void Configure(EntityTypeBuilder<Director> builder)
     {
         builder.Property(m => m.Name)
             .HasMaxLength(255)
             .IsRequired();
 
-        builder.HasOne(m => m.Director).WithMany(d => d.Movies);
     }
 }

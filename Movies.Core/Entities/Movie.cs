@@ -10,6 +10,8 @@ public class Movie : BaseEntity //, IAuditedEntity
     public MpaaRating MpaaRating { get; set; }
     public  string Genre { get; set; }
     public  double Rating { get; set; }
+    public int DirectorId { get; set; }
+    public Director Director { get; set; }
     //public string CreatedBy { get; set; }
     //public DateTime CreatedOn { get; set; }
     //public string UpdatedBy { get; set; }
