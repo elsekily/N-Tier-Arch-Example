@@ -5,11 +5,15 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Movies", "Movies\Movies.csproj", "{12F0A9F8-E356-4665-BA51-F7BB7BF1BDE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movies.Core", "Movies.Core\Movies.Core.csproj", "{679623B9-DB15-4AF6-BD97-2C181B706C4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Movies.Core", "Movies.Core\Movies.Core.csproj", "{679623B9-DB15-4AF6-BD97-2C181B706C4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movies.DataAccess", "Movies.DataAccess\Movies.DataAccess.csproj", "{8BBC90D3-5F98-4B6C-9784-2537AC9ADB6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Movies.DataAccess", "Movies.DataAccess\Movies.DataAccess.csproj", "{8BBC90D3-5F98-4B6C-9784-2537AC9ADB6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movies.Application", "Movies.Application\Movies.Application.csproj", "{339E7ECA-AD4A-42FD-8C06-104CB1823E11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Movies.Application", "Movies.Application\Movies.Application.csproj", "{339E7ECA-AD4A-42FD-8C06-104CB1823E11}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Movies.Shared", "Movies.Shared\Movies.Shared.csproj", "{90CBDB1E-B972-4A8A-BF85-036508C959BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movies.API", "Movies.API\Movies.API.csproj", "{DE6ED45C-9E4E-4057-95E3-C13F928CBBBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{339E7ECA-AD4A-42FD-8C06-104CB1823E11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{339E7ECA-AD4A-42FD-8C06-104CB1823E11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{339E7ECA-AD4A-42FD-8C06-104CB1823E11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90CBDB1E-B972-4A8A-BF85-036508C959BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90CBDB1E-B972-4A8A-BF85-036508C959BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90CBDB1E-B972-4A8A-BF85-036508C959BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90CBDB1E-B972-4A8A-BF85-036508C959BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE6ED45C-9E4E-4057-95E3-C13F928CBBBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE6ED45C-9E4E-4057-95E3-C13F928CBBBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE6ED45C-9E4E-4057-95E3-C13F928CBBBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE6ED45C-9E4E-4057-95E3-C13F928CBBBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
