@@ -11,6 +11,5 @@ internal class DirectorConfiguration : IEntityTypeConfiguration<Director>
         builder.Property(m => m.Name)
             .HasMaxLength(255)
             .IsRequired();
-
     }
 }

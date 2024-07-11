@@ -12,7 +12,7 @@ using Movies.DataAccess.Persistence;
 namespace Movies.DataAccess.Persistence.Migrations
 {
     [DbContext(typeof(MoviesDbContext))]
-    [Migration("20240622200650_AddIdentity")]
+    [Migration("20240622231013_AddIdentity")]
     partial class AddIdentity
     {
         /// <inheritdoc />

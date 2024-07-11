@@ -19,7 +19,8 @@ public static class DataAccessDependencyInjection
     public static IServiceCollection AddDataAccess(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDatabase(configuration);
-        
+        //services.AddIdentity();
+
         services.AddRepositories();
 
         return services;
@@ -35,8 +36,8 @@ public static class DataAccessDependencyInjection
                             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
                                        opt => opt.MigrationsAssembly(typeof(MoviesDbContext).Assembly.FullName)));
 
-        services.AddIdentity<User, IdentityRole>()
+        services.AddIdentity<User, IdentityRole<int>>()
                 .AddEntityFrameworkStores<MoviesDbContext>();
     }
-
+   
 }
